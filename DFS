@@ -1,0 +1,13 @@
+def dfs(g,N):
+    visited = [0]
+    final = dfs2(g, 0, visited)
+    return final
+
+def dfs2(g, root, visited):
+    for p,q in enumerate(g[root]):
+        if q not in visited:
+            visited.append(q)
+            dfs2(g, q, visited)
+    return visited
+    
+    
