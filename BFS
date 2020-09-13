@@ -1,0 +1,13 @@
+def bfs(g,N):
+    visited = [0 for i in range(N)]
+    order = [0]
+    Q = [0]
+    while len(Q) > 0:
+        root = Q[0]
+        Q.remove(Q[0])
+        for i in g[root]:
+            if visited[i] == 0:
+                order.append(i)
+                visited[i] = 1
+                Q.append(i)
+    return order
